@@ -1,0 +1,32 @@
+
+<div class="container mt-4" >
+    <form>
+        <div class="form-group">
+            <input type="text" placeholder="Nombre" name="nombre" [(ngModel)]="libro.nombre" class="form-control" autofocus>
+        </div>
+        <div class="form-group">
+            <textarea type="text" placeholder="Resumen" name="resumen" [(ngModel)]="libro.resumen" rows="2" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="email" name="text" placeholder="autor" [(ngModel)]="libro.autor" class="form-control" >
+        </div>
+        <div class="form-group">
+            <input type="text" placeholder="Editoria" name="editorial" [(ngModel)]="libro.editorial" rows="2" class="form-control">
+        </div>
+        <br>
+        
+    </form>
+    
+    
+    
+    <div>
+        <label for="image" class="form-label">Imagen</label>
+        <input type="file" id="image" class="form-control" accept="image/*" (change)="imagen($event)">
+    </div>
+    <div>
+        <label for="image" class="form-label">Archivo</label>
+        <input type="file" id="image" class="form-control" accept="" (change)="archivo($event)">
+    </div>
+    <button class="btn btn-dark mt-4" (click)="enviar()">Enviar</button>
+</div>
+

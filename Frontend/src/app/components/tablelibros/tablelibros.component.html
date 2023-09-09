@@ -1,0 +1,26 @@
+<table class="table table-dark mt-4">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Resumen</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Editorial</th>
+        <th scope="col">Imagen</th>
+        <th scope="col">Archivos</th>
+        <th scope="col">Id_categoria</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor=" let libro of libros">
+        <td>{{libro.id}}</td>
+          <td>{{libro.nombre}}</td>
+        <td>{{libro.resumen}}</td>
+        <td>{{libro.autor}}</td>
+        <td>{{libro.editorial}}</td>
+        <td>{{libro.imagen}}</td>
+        <td>{{libro.archivo}}</td>
+        <td>{{libro.id_categoria}}</td>
+      </tr>
+    </tbody>
+  </table>

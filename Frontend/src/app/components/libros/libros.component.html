@@ -1,0 +1,15 @@
+<app-navbar ></app-navbar>
+<div class="container-fluid con">
+    <div class="row">
+        <div class="col-md-2  barr">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item btn" routerLink="/libros">Ver libros</li>
+                <li class="list-group-item btn" routerLink="/libros/registro">Agregar libro</li>
+                <li class="list-group-item btn" routerLink="/libros/busqueda">Buscar libros</li>
+              </ul>
+        </div>
+        <div class="col-md-10 cont">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

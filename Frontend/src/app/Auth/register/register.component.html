@@ -1,0 +1,111 @@
+
+<!-- <form>
+    <div class="form-group mb-3 row">
+        <label for="exampleFormControlInput1" class="col-sm-2 col-form-labe">Nombre</label>
+        <div class="col-sm-10">
+            <input type="text" placeholder="Nombre" name="nombre" [(ngModel)]="user.nombre" class="form-control " id="exampleFormControlInput1" >
+        </div>
+    </div>
+    <div class="form-group mb-3 row">
+        <label for="" class="col-sm-2 col-form-labe">Apellido</label>
+        <div class="col-sm-10">
+            <input type="text" placeholder="Apellido" name="apellido" [(ngModel)]="user.apellido" rows="2" class="form-control">
+        </div>
+    </div>
+    <div class="form-group mb-3 row">
+        <label for="" class="col-sm-2 col-form-labe">Correo electronico</label>
+        <div class="col-sm-10">
+            <input type="email" name="email" placeholder="alguien@mail.com" [(ngModel)]="user.email" class="form-control" >
+        </div>
+    </div>
+    <div class="form-group mb-3 row">
+        <label for="" class="col-sm-2 col-form-labe">Contraseña</label>
+        <div class="col-sm-10">
+            <input type="password" placeholder="Contraseña" name="password" [(ngModel)]="user.password" rows="2" class="form-control">
+        </div>
+    </div>
+    <div class="form-group mb-3 row">
+        <label for="" class="col-sm-2 col-form-labe">Repetir Contraseña</label>
+        <div class="col-sm-10">
+            <input type="password" placeholder="Contraseña" name="password2" [(ngModel)]="user.password" rows="2" class="form-control">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <input type="number" placeholder="Numero Celular" name="telefono" [(ngModel)]="user.telefono" rows="2" class="form-control">
+    </div>
+    <br>
+    <button class="btn btn-success btn-block" length="220px" (click)="registrar()">
+        Guardar
+    </button>
+</form> -->
+
+
+<div class="sidenav">
+    <div class="login-main-text">
+       <h2 class="text-center">Registrarse</h2>
+       
+    </div>
+  </div>
+  <div class="main" >
+    <div class="col-md-6 col-sm-12">
+       <div class="login-form" style="margin-left: 10%;">
+          <form [formGroup]="user">
+            <div class="form-group" (ngSubmit)="registrar()">
+                <label>Nombre</label>
+                <input type="text" class="form-control"  formControlName="nombre"  placeholder="Ingresa tu nombre">
+                <div class="alert alert-danger" *ngIf="!user.get('nombre')?.valid && user.get('nombre')?.dirty && !user.get('nombre')?.untouched">
+                    El nombre es obligatorio
+                </div>
+             </div>
+             <div class="form-group mt-2">
+                <label>Apellido</label>
+                <input type="text" class="form-control" formControlName="apellido" placeholder="Apellido">
+                <div class="alert alert-danger" *ngIf="!user.get('apellido')?.valid && user.get('apellido')?.dirty && !user.get('apellido')?.untouched">
+                    El apellido es obligatorio
+                </div>
+             </div>
+             <div class="form-group mt-2">
+                <label>Correo Electronico</label>
+                <input type="text" class="form-control" formControlName="email" placeholder="ejemplo@ejemplo.com">
+                <div class="alert alert-danger" *ngIf="!user.get('email')?.valid && user.get('email')?.dirty && !user.get('email')?.untouched">
+                    El formato es incorrecto
+                </div>
+             </div>
+             <div class="form-group mt-2">
+                <label>Contraseña</label>
+                <input type="password" class="form-control"  formControlName="password" placeholder="Contraseña">
+                <div class="alert alert-caution" *ngIf="user.get('password')?.touched && user.get('password')?.invalid">
+                    La contraseña debe contener de 8 a 15 caracteres
+                </div>
+                <div class="alert alert-danger" *ngIf="!user.get('password')?.valid && user.get('password')?.dirty && !user.get('password')?.untouched">
+                    La contraseña es obligatoria
+                </div>
+             </div>
+             <div class="form-group mt-2">
+                <label>Confirma Contraseña</label>
+                <input type="password" class="form-control"  formControlName="passwordconfirm" placeholder="Contraseña">
+             </div>
+             <!-- <dir *ngIf="pass == false">
+                las contraseñas no coinciden
+             </dir> -->
+             <div class="form-group mt-2">
+                <label>Telefono</label>
+                <input type="text" class="form-control" formControlName="telefono" placeholder="9876543210">
+                <div class="alert alert-danger" *ngIf="!user.get('telefono')?.valid && user.get('telefono')?.dirty && !user.get('telefono')?.untouched">
+                    El telefono es obligatoria
+                </div>
+             </div>
+             <div *ngIf="pass == true">
+                <button type="submit " (click)="registrar()"  class="btn btn-black mt-4">Confirmar registro</button>
+             </div>
+             <div *ngIf="pass == false">
+                <button type="submit" disabled (click)="registrar()"  class="btn btn-black mt-4">Confirmar registro</button>
+             </div>
+             <br>
+             <button type="button" routerLink="/" class="btn btn-link" style="margin-top: 20%; color: black;">Ya tengo cuenta</button>
+          </form>
+       </div>
+    </div>
+  </div>
+
